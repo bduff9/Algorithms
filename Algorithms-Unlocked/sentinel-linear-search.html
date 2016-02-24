@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <title>Sentinel Linear Search</title>
+  </head>
+  
+  <body>
+    <div id="result"></div>
+    <script type="text/javascript">
+      var A = [0, 1, 2, 3, 4, 5],
+          n = A.length,
+          x = 6,
+          result = sentinelLinearSearch(A, n, x);
+      document.getElementById('result').innerHTML = 'Item ' + x + ' found in index ' + result;
+      
+      function sentinelLinearSearch(A, n, x) {
+        var notFound = -1,
+            last = A[n-1],
+            i = 0;
+        A[n-1] = x;
+        while (A[i] !== x) {
+          i++;
+        }
+        A[n-1] = last;
+        if (i < n-1 || A[n-1] === x) {
+          return i;
+        }
+        return notFound;
+      }
+    </script>
+  </body>
+</html>

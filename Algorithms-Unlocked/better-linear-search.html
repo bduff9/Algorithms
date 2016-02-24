@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <title>Better Linear Search</title>
+  </head>
+  
+  <body>
+    <div id="result"></div>
+    <script type="text/javascript">
+      var A = [0, 1, 2, 3, 4, 5],
+          n = A.length,
+          x = 0,
+          result = betterLinearSearch(A, n, x);
+      document.getElementById('result').innerHTML = 'Item ' + x + ' found in index ' + result;
+      
+      function betterLinearSearch(A, n, x) {
+        var notFound = -1;
+        for (var i = 0; i < n; i++) {
+          if (A[i] === x) {
+            return i;
+          }
+        }
+        return notFound;
+      }
+    </script>
+  </body>
+</html>
